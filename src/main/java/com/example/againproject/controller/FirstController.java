@@ -9,6 +9,7 @@ public class FirstController {
 
     @GetMapping("/hi") // 접속할 URL 주소
     public String hi(Model model) {
+        model.addAttribute("username", "seung");
         return "greetings"; // templats/greetings.mustache -> 브라우저로 전송!
     }
 }
