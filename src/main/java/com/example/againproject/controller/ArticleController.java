@@ -1,6 +1,7 @@
 package com.example.againproject.controller;
 
 import com.example.againproject.dto.ArticleForm;
+import com.example.againproject.entity.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
