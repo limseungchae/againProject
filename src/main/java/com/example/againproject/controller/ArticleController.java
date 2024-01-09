@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ArticleController {
 
+    private ArticleRepository articleRepository;
+
     @GetMapping("/articles/new")
     public String newArticleForm() {
         return "articles/new";
@@ -23,6 +25,7 @@ public class ArticleController {
         Article article = form.toEntity();
 
         // 2. Repository에게 Entity를 DB안에 저장하게 함!
+        Article saved = articleRepository.save();
 
         return "";
     }
