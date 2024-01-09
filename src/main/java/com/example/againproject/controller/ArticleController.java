@@ -2,8 +2,8 @@ package com.example.againproject.controller;
 
 import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
+import com.example.againproject.repository.ArticleRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -25,7 +25,7 @@ public class ArticleController {
         Article article = form.toEntity();
 
         // 2. Repository에게 Entity를 DB안에 저장하게 함!
-        Article saved = articleRepository.save();
+        Article saved = articleRepository.save(article);
 
         return "";
     }
