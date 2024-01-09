@@ -3,6 +3,7 @@ package com.example.againproject.controller;
 import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
 import com.example.againproject.repository.ArticleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ArticleController {
 
+    @Autowired // 스프링 부트가 미리 생성해놓은 객체를 가져다가 자동 연결!
     private ArticleRepository articleRepository;
 
     @GetMapping("/articles/new")
