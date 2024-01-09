@@ -1,6 +1,8 @@
 package com.example.againproject.controller;
 
+import com.example.againproject.dto.ArticleForm;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -13,7 +15,8 @@ public class ArticleController {
     }
 
     @PostMapping("/articles/create")
-    public String createarticle() {
+    public String createArticle(ArticleForm form) {
+        System.out.println(form.toString());
         return "";
     }
 }
