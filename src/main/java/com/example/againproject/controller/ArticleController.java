@@ -51,6 +51,6 @@ public class ArticleController {
         // 2. 모델에 데이터 등록하기
         model.addAttribute("article", articleEntity);
         // 3. 뷰 페이지 반환하기
-        return "";
+        return "articles/show";
     }
 }
