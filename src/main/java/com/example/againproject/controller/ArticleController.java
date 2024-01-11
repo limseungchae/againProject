@@ -57,11 +57,12 @@ public class ArticleController {
     }
 
     @GetMapping("/articles")
-    public String index() {
+    public String index(Model model) { // model 객체 받아오기
         // 1. 모든 데이터 가져오기 // 위에꺼 사용해도 이상없음
 //        Iterable<Article> articleEntityList = articleRepository.findAll();
         ArrayList<Article> articleEntityList = articleRepository.findAll();
         // 2. 모델에 데이터 등록하기
+        model.addAttribute("articleList",articleEntityList); // articleEntityList 등록
         // 3. 뷰 페이지 설정하기
         return "";
     }
