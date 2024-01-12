@@ -79,7 +79,8 @@ public class ArticleController {
     }
 
     @PostMapping("/articles/update")
-    public String update() {
+    public String update(ArticleForm form) { // 매개변수로 DTO 받아 오기
+        log.info(form.toString());
         return "";
     }
 }
