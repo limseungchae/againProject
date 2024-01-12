@@ -68,7 +68,10 @@ public class ArticleController {
     }
 
     @GetMapping("/articles/{id}/edit")
-    public String edit() {
+    public String edit(@PathVariable Long id) { // id 를 매개변수로 받아 오기
+        // 수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);// DB에 수정할 데이터 가져오기
+
         // 뷰페이지 설정하기
         return "articles/edit";
     }
