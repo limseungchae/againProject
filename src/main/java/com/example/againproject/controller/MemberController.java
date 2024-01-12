@@ -18,6 +18,11 @@ public class MemberController {
     @Autowired
     MemberRepository memberRepository;
 
+    @GetMapping("/members/new")
+    public String newMemberForm() {
+        return "members/new";
+    }
+
     @GetMapping("/sigup")
     public String signUpPage() {
         return "members/new";
@@ -30,7 +35,7 @@ public class MemberController {
         log.info(member.toString());
         Member saved = memberRepository.save(member);
         log.info(saved.toString());
-        return "";
+        return "redirect:/members/" + saved.getId();
     }
 
     @GetMapping("/members/{id}")
