@@ -66,4 +66,10 @@ public class ArticleController {
         // 3. 뷰 페이지 설정하기
         return "articles/index";
     }
+
+    @GetMapping("/articles/{id}/edit")
+    public String edit() {
+        // 뷰페이지 설정하기
+        return "articles/edit";
+    }
 }
