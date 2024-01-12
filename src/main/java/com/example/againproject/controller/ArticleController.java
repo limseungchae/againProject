@@ -94,6 +94,6 @@ public class ArticleController {
         }
 
         // 3. 수정 결과 페이지로 리다이렉트 하기
-        return "";
+        return "redirect:/articles/" + articleEntity.getId();
     }
 }
