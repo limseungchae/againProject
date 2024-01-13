@@ -104,6 +104,9 @@ public class ArticleController {
         Article target = articleRepository.findById(id).orElse(null);
         log.info(target.toString());
         // 2. 대상 엔티티 삭제하기
+        if (target != null) {
+            articleRepository.delete(target);
+        }
         // 3. 결과 페이지로 리다이렉트하기
         return "null";
     }
