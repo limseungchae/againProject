@@ -1,9 +1,6 @@
 package com.example.againproject.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +14,7 @@ import lombok.ToString;
 public class Article {
 
     @Id // 대표값을 지정! like a 주민등록번호
-    @GeneratedValue // 1, 2, 3, .... 자동 생성 어노테이션!
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id 자동 생성
     private Long id; // 주의! 데이터 타입을 String -> Long 변경해야 함
 
     @Column
