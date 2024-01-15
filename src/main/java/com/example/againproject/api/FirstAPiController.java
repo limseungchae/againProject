@@ -37,6 +37,7 @@ public class FirstAPiController {
         Article article = dto.toEntity();
         log.info("id: {}, article: {}", id, article.toString());
         // 2. 타깃 조회하기
+        Article target = articleRepository.findById(id).orElse(null);
         // 3. 잘못된 요청 처리하기
         // 4. 업데이트 및 정상 응답(200)하기
     }
