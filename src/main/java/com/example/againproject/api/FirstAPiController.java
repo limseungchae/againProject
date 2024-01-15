@@ -1,12 +1,10 @@
 package com.example.againproject.api;
 
+import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
 import com.example.againproject.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,11 @@ public class FirstAPiController {
         return articleRepository.findById(id).orElse(null);
     }
     // POST
+    @PostMapping("/api/articles")
+    public Article create(@RequestBody ArticleForm dto) {
+        Article article = dto.toEntity();
+        return articleRepository.save(article);
+    }
     // PATCH
     // DELETE
 }
