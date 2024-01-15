@@ -28,5 +28,13 @@ public class FirstAPiController {
         return articleRepository.save(article);
     }
     // PATCH
+    @PatchMapping("/api/articles/{id}")
+    public Article update(@PathVariable Long id,
+                          @RequestBody ArticleForm dto) {
+        // 1. DTO -> 엔티티 변환하기
+        // 2. 타깃 조회하기
+        // 3. 잘못된 요청 처리하기
+        // 4. 업데이트 및 정상 응답(200)하기
+    }
     // DELETE
 }
