@@ -16,21 +16,25 @@ import java.util.List;
 public class FirstAPiController {
     @Autowired
     private ArticleRepository articleRepository;
+
     // GET
     @GetMapping("/api/articles")
     public List<Article> index() {
         return articleRepository.findAll();
     }
+
     @GetMapping("/api/articles/{id}")
     public Article show(@PathVariable Long id) {
         return articleRepository.findById(id).orElse(null);
     }
+
     // POST
     @PostMapping("/api/articles")
     public Article create(@RequestBody ArticleForm dto) {
         Article article = dto.toEntity();
         return articleRepository.save(article);
     }
+
     // PATCH
     @PatchMapping("/api/articles/{id}")
     public ResponseEntity<Article> update(@PathVariable Long id,
@@ -51,5 +55,13 @@ public class FirstAPiController {
         Article updated = articleRepository.save(article);
         return ResponseEntity.status(HttpStatus.OK).body(updated);
     }
+
     // DELETE
+    @DeleteMapping("/api/articles/{id}")
+    public ResponseEntity<Article> delete(@PathVariable Long id) {
+        // 1. 대상 찾기
+        // 2. 잘못된 요청 처리하기
+        // 3. 대상 삭제하기
+
+    }
 }
