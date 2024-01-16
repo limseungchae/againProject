@@ -66,6 +66,7 @@ public class FirstAPiController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         // 3. 대상 삭제하기
-
+        articleRepository.delete(target);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
