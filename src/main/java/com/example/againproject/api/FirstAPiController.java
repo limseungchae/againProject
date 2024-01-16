@@ -47,6 +47,7 @@ public class FirstAPiController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         // 4. 업데이트 및 정상 응답(200)하기
+        target.patch(article); // 기존 데이터에 새 데이터 붙이기
         Article updated = articleRepository.save(article);
         return ResponseEntity.status(HttpStatus.OK).body(updated);
     }
