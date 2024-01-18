@@ -3,6 +3,7 @@ package com.example.againproject.api;
 import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
 import com.example.againproject.repository.ArticleRepository;
+import com.example.againproject.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,10 @@ import java.util.List;
 @Slf4j
 @RestController // REST API용 컨트롤러
 public class FirstAPiController {
+
+    @Autowired
+    private ArticleService articleService; // 서비스 객체주입
+
 //    @Autowired
 //    private ArticleRepository articleRepository;
 //
