@@ -22,11 +22,11 @@ public class FirstAPiController {
 //    @Autowired
 //    private ArticleRepository articleRepository;
 //
-//    // GET
-//    @GetMapping("/api/articles")
-//    public List<Article> index() {
-//        return articleRepository.findAll();
-//    }
+    // GET
+    @GetMapping("/api/articles")
+    public List<Article> index() {
+        return articleService.index();
+    }
 //
 //    @GetMapping("/api/articles/{id}")
 //    public Article show(@PathVariable Long id) {
