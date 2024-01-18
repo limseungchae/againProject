@@ -27,11 +27,11 @@ public class FirstAPiController {
     public List<Article> index() {
         return articleService.index();
     }
-//
-//    @GetMapping("/api/articles/{id}")
-//    public Article show(@PathVariable Long id) {
-//        return articleRepository.findById(id).orElse(null);
-//    }
+
+    @GetMapping("/api/articles/{id}")
+    public Article show(@PathVariable Long id) {
+        return articleService.show(id);
+    }
 //
 //    // POST
 //    @PostMapping("/api/articles")
