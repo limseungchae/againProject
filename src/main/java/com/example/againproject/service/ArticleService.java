@@ -1,5 +1,6 @@
 package com.example.againproject.service;
 
+import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
 import com.example.againproject.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,5 +20,13 @@ public class ArticleService {
 
     public Article show(Long id) {
         return articleRepository.findById(id).orElse(null);
+    }
+
+    public Article create(ArticleForm dto) {
+        Article article = dto.toEntity(); // dto -> 엔티티로 변환 후 article에 저장
+        if (article.getId() != null) {
+            return null;
+        };
+        return articleRepository.save(article); // article을 DB에 저장
     }
 }

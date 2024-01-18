@@ -32,13 +32,15 @@ public class FirstAPiController {
     public Article show(@PathVariable Long id) {
         return articleService.show(id);
     }
-//
-//    // POST
-//    @PostMapping("/api/articles")
-//    public Article create(@RequestBody ArticleForm dto) {
-//        Article article = dto.toEntity();
-//        return articleRepository.save(article);
-//    }
+
+    // POST
+    @PostMapping("/api/articles")
+    public ResponseEntity<Article> create(@RequestBody ArticleForm dto) {
+        Article created = articleService.create(dto);
+        return (created != null) ? // 생성하면 정상, 실패하면 오류 응답
+                ResponseEntity.status(HttpStatus.OK).body(created) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 //
 //    // PATCH
 //    @PatchMapping("/api/articles/{id}")
