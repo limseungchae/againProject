@@ -5,8 +5,6 @@ import com.example.againproject.entity.Article;
 import com.example.againproject.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,5 +59,9 @@ public class ArticleService {
         // 3. 대상 삭제하기
         articleRepository.delete(target);
         return target; // 응답은 컨트롤러가 하므로 여기서는 수정 데이터만 반환
+    }
+
+    public List<Article> createAricles(List<ArticleForm> dtos) {
+        return null;
     }
 }
