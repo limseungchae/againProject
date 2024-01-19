@@ -62,6 +62,10 @@ public class ArticleService {
     }
 
     public List<Article> createAricles(List<ArticleForm> dtos) {
+        // 1. dto 묶음을 엔티티 묶음으로 변환하기
+        // 2. 엔티티 묶음을 DB에 저장하기
+        // 3. 강제 예외 발생시키기
+        // 4. 결과 값 반환하기
         return null;
     }
 }
