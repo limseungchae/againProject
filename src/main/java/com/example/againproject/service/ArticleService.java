@@ -72,6 +72,8 @@ public class ArticleService {
         articleList.stream()
                 .forEach(article -> articleRepository.save(article));
         // 3. 강제 예외 발생시키기
+        articleRepository.findById(-1L) // id가 -1인 데이터 찾기
+                .orElseThrow(() -> new IllegalArgumentException("결제 실패!")); // 찾는 데이터가 없으면 예외 발생
         // 4. 결과 값 반환하기
         return articleList;
     }
