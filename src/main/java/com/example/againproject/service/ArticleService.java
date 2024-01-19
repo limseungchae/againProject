@@ -63,6 +63,7 @@ public class ArticleService {
         return target; // 응답은 컨트롤러가 하므로 여기서는 수정 데이터만 반환
     }
 
+    @Transactional
     public List<Article> createAricles(List<ArticleForm> dtos) {
         // 1. dto 묶음을 엔티티 묶음으로 변환하기
         List<Article> articleList = dtos.stream()
