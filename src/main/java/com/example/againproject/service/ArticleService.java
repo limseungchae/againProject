@@ -6,6 +6,7 @@ import com.example.againproject.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -68,8 +69,10 @@ public class ArticleService {
                 .map(dto -> dto.toEntity())
                 .collect(Collectors.toList());
         // 2. 엔티티 묶음을 DB에 저장하기
+        articleList.stream()
+                .forEach(article -> articleRepository.save(article));
         // 3. 강제 예외 발생시키기
         // 4. 결과 값 반환하기
-        return null;
+        return articleList;
     }
 }
