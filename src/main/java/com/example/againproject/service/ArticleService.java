@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service // 서비스 객체 생성
@@ -63,6 +64,9 @@ public class ArticleService {
 
     public List<Article> createAricles(List<ArticleForm> dtos) {
         // 1. dto 묶음을 엔티티 묶음으로 변환하기
+        List<Article> articleList = dtos.stream()
+                .map(dto -> dto.toEntity())
+                .collect(Collectors.toList());
         // 2. 엔티티 묶음을 DB에 저장하기
         // 3. 강제 예외 발생시키기
         // 4. 결과 값 반환하기
