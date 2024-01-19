@@ -61,4 +61,9 @@ public class FirstAPiController {
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
     }
+
+    @PostMapping("/api/transaction-test") // 여러 게시글 생성 요청 접수
+    public ResponseEntity<List<Article>> transactionTest
+            (@RequestBody List<ArticleForm> dtos) {
+    }
 }
