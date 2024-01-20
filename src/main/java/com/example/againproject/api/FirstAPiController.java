@@ -19,9 +19,6 @@ public class FirstAPiController {
     @Autowired
     private ArticleService articleService; // 서비스 객체주입
 
-//    @Autowired
-//    private ArticleRepository articleRepository;
-//
     // GET
     @GetMapping("/api/articles")
     public List<Article> index() {
