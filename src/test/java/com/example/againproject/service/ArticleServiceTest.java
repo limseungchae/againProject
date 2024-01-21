@@ -27,5 +27,6 @@ class ArticleServiceTest {
         // 2. 실제 데이터
         List<Article> articles = articleService.index();
         // 3. 비교 및 검증
+        assertEquals(expected.toString(), articles.toString());
     }
 }
