@@ -14,5 +14,8 @@ class ArticleServiceTest {
 
     @Test
     void index() {
+        // 1. 예상 테이터
+        // 2. 실제 데이터
+        // 3. 비교 및 검증
     }
 }
