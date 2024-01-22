@@ -41,6 +41,9 @@ class ArticleServiceTest {
         assertEquals(expected.toString(), article.toString());
     }
     @Test
-    void show_실패() {
+    void show_실패_존재하지_않는_id_입력() {
+        // 1. 예상 데이터
+        // 2. 실제 데이터
+        // 3. 비교 및 검증
     }
 }
