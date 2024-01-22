@@ -50,4 +50,8 @@ class ArticleServiceTest {
         // 3. 비교 및 검증
         assertEquals(expected, article);
     }
+
+    @Test
+    void create() {
+    }
 }
