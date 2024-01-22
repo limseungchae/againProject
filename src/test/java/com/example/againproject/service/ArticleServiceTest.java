@@ -52,6 +52,9 @@ class ArticleServiceTest {
     }
 
     @Test
-    void create() {
+    void create_성공() {
+    }
+    @Test
+    void create_실패() {
     }
 }
