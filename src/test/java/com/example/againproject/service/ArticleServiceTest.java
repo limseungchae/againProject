@@ -31,6 +31,9 @@ class ArticleServiceTest {
     }
 
     @Test
-    void show() {
+    void show_성공() {
+    }
+    @Test
+    void show_실패() {
     }
 }
