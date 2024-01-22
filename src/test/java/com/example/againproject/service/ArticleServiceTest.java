@@ -29,4 +29,8 @@ class ArticleServiceTest {
         // 3. 비교 및 검증
         assertEquals(expected.toString(), articles.toString());
     }
+
+    @Test
+    void show() {
+    }
 }
