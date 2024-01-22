@@ -52,7 +52,10 @@ class ArticleServiceTest {
     }
 
     @Test
-    void create_성공() {
+    void create_성공_title과_content만_있는_dto_입력() {
+        // 1. 예상 데이터
+        // 2. 실제 데이터
+        // 3. 비교 및 검증
     }
     @Test
     void create_실패() {
