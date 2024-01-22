@@ -1,5 +1,6 @@
 package com.example.againproject.service;
 
+import com.example.againproject.dto.ArticleForm;
 import com.example.againproject.entity.Article;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,10 @@ class ArticleServiceTest {
     @Test
     void create_성공_title과_content만_있는_dto_입력() {
         // 1. 예상 데이터
+        String title = "라라라라"; // 값 임의 배경
+        String content = "4444"; // 값 임의 배경
+        ArticleForm dto = new ArticleForm(null, title, content); // dto 생성
+        Article expected = new Article(4L, title, content); // 예상 데이터 저장
         // 2. 실제 데이터
         // 3. 비교 및 검증
     }
