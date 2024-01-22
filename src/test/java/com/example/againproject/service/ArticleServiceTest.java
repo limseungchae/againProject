@@ -73,6 +73,7 @@ class ArticleServiceTest {
         ArticleForm dto = new ArticleForm(id, title, content); // dto 생성
         Article expected = null; // 예상 데이터 저장
         // 2. 실제 데이터
+        Article article = articleService.create(dto);
         // 3. 비교 및 검증
     }
 }
