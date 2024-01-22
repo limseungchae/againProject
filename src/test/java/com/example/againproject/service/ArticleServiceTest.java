@@ -46,6 +46,7 @@ class ArticleServiceTest {
         Long id = -1L;
         Article expected = null;
         // 2. 실제 데이터
+        Article article = articleService.show(id);
         // 3. 비교 및 검증
     }
 }
