@@ -62,6 +62,7 @@ class ArticleServiceTest {
         // 2. 실제 데이터
         Article article = articleService.create(dto); // 실제 데이터 저장
         // 3. 비교 및 검증
+        assertEquals(expected.toString(), article.toString()); // 비교
     }
     @Test
     void create_실패() {
