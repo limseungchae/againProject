@@ -43,6 +43,8 @@ class ArticleServiceTest {
     @Test
     void show_실패_존재하지_않는_id_입력() {
         // 1. 예상 데이터
+        Long id = -1L;
+        Article expected = null;
         // 2. 실제 데이터
         // 3. 비교 및 검증
     }
