@@ -65,6 +65,9 @@ class ArticleServiceTest {
         assertEquals(expected.toString(), article.toString()); // 비교
     }
     @Test
-    void create_실패() {
+    void create_실패_id가_포함된_dto_입력() {
+        // 1. 예상 데이터
+        // 2. 실제 데이터
+        // 3. 비교 및 검증
     }
 }
