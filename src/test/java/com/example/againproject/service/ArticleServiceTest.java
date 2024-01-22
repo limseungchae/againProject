@@ -31,7 +31,10 @@ class ArticleServiceTest {
     }
 
     @Test
-    void show_성공() {
+    void show_성공_존재하는_id_입력() {
+        // 1. 예상 데이터
+        // 2. 실제 데이터
+        // 3. 비교 데이터
     }
     @Test
     void show_실패() {
