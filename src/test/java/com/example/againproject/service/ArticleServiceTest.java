@@ -109,6 +109,20 @@ class ArticleServiceTest {
         Article article = articleService.update(id, dto);
         // 3. 비교 및 검증
         assertEquals(article.toString(), expected.toString());
+    }
 
+    @Test
+    @Transactional
+    void update_실패_존재하지_않는_id의_dto_입력() {
+        // 1. 예상 데이터
+        Long id = -1L;
+        String title = "가나다라";
+        String content = "1234";
+        ArticleForm dto = new ArticleForm(id, title, content);
+        Article expected = null;
+        // 2. 실제 데이터
+        Article article = articleService.update(id, dto);
+        // 3. 비교 및 검증
+        assertEquals(expected, article);
     }
 }
