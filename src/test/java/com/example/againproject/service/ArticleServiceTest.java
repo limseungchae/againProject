@@ -36,6 +36,7 @@ class ArticleServiceTest {
         Long id = 1L;
         Article expected = new Article(id, "가가가가", "1111");
         // 2. 실제 데이터
+        Article article = articleService.show(id);
         // 3. 비교 데이터
     }
     @Test
