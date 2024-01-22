@@ -67,6 +67,11 @@ class ArticleServiceTest {
     @Test
     void create_실패_id가_포함된_dto_입력() {
         // 1. 예상 데이터
+        Long id = 4L;
+        String title = "라라라라";
+        String content = "4444";
+        ArticleForm dto = new ArticleForm(id, title, content); // dto 생성
+        Article expected = null; // 예상 데이터 저장
         // 2. 실제 데이터
         // 3. 비교 및 검증
     }
