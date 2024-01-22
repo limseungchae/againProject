@@ -80,4 +80,35 @@ class ArticleServiceTest {
         // 3. 비교 및 검증
         assertEquals(expected, article);
     }
+
+    @Test
+    @Transactional
+    void update_성공_존재하는_id와_title_content가_있는_dto_입력() {
+        // 1. 예상 데이터
+        Long id = 1L;
+        String title = "가나다라";
+        String content = "1234";
+        ArticleForm dto = new ArticleForm(id, title, content);
+        Article expected = new Article(id, title, content);
+        // 2. 실제 데이터
+        Article article = articleService.update(id, dto);
+        // 3. 비교 및 검증
+        assertEquals(article.toString(), expected.toString());
+    }
+
+    @Test
+    @Transactional
+    void update_성공_존재하는_id와_title만_있는_dto_입력() {
+        // 1. 예상 데이터
+        Long id = 1L;
+        String title = "AAAA";
+        String content = null;
+        ArticleForm dto = new ArticleForm(id, title, content);
+        Article expected = new Article(1L, "AAAA", "1111");
+        // 2. 실제 데이터
+        Article article = articleService.update(id, dto);
+        // 3. 비교 및 검증
+        assertEquals(article.toString(), expected.toString());
+
+    }
 }
