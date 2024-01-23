@@ -22,6 +22,7 @@ class CommentRepositoryTest {
         /* Case 1: 4번 게시글의 모든 댓글 조회 */
         {
             // 1. 입력 데이터 준비
+            Long articleId = 4L;
             // 2. 실제 데이터
             List<Comment> comments = commentRepository.findByArticleId(articleId);
             // 3. 예상 데이터
