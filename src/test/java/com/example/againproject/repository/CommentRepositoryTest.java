@@ -27,6 +27,7 @@ class CommentRepositoryTest {
             List<Comment> comments = commentRepository.findByArticleId(articleId);
             // 3. 예상 데이터
             // 4. 비교 및 검증
+            assertEquals(expected.toString(), comments.toString(), "4번 글의 모든 댓글을 출력!");
         }
     }
 
