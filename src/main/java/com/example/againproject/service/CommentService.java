@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -50,5 +48,14 @@ public class CommentService {
         Comment created = commentRepository.save(comment);
         // 4. DTO로 변환해 반환
         return CommentDto.createCommentDto(created);
+    }
+
+    @Transactional
+    public CommentDto update(Long id, CommentDto dto) {
+        // 1. 댓글 조회 및 예외 발생
+        // 2. 댓글 수정
+        // 3. DB로 갱신
+        // 4. 댓글 엔티티를 DTO로 변환 및 반환
+        return dto;
     }
 }
