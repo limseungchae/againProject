@@ -1,14 +1,17 @@
 package com.example.againproject.service;
 
 import com.example.againproject.dto.CommentDto;
+import com.example.againproject.entity.Article;
 import com.example.againproject.entity.Comment;
 import com.example.againproject.repository.ArticleRepository;
 import com.example.againproject.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,5 +36,13 @@ public class CommentService {
                 .stream() // 댓글 엔티티 목록을 스트림으로 변환
                 .map(comment -> CommentDto.createCommentDto(comment)) // 엔티티를 DTO로 매핑
                 .collect(Collectors.toList()); // 스트림을 리스트로 변환
+    }
+
+    @Transactional
+    public CommentDto create(Long articleId, CommentDto dto) {
+        // 1. 게시글 조회 및 예외 발생
+        // 2. 댓글 엔티티 생성
+        // 3. 댓글 엔티티 DB에 저장
+        // 4. DTO로 변환해 반환
     }
 }
