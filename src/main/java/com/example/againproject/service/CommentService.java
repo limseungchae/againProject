@@ -28,5 +28,6 @@ public class CommentService {
             dtos.add(dto); // 변환한 DTO를 dtos 리스트에 삽입
         }
         // 3. 결과 반환
+        return dtos;
     }
 }
