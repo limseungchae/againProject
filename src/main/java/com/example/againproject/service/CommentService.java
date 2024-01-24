@@ -45,6 +45,7 @@ public class CommentService {
                 .orElseThrow(() -> new IllegalArgumentException("댓글 생성 실패!" +
                         "대상 게시글이 없습니다.")); // 없으면 에러 메시지 출력
         // 2. 댓글 엔티티 생성
+        Comment comment = Comment.creatComment(dto, article);
         // 3. 댓글 엔티티 DB에 저장
         // 4. DTO로 변환해 반환
     }
