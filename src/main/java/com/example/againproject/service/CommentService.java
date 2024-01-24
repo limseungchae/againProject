@@ -49,5 +49,6 @@ public class CommentService {
         // 3. 댓글 엔티티 DB에 저장
         Comment created = commentRepository.save(comment);
         // 4. DTO로 변환해 반환
+        return CommentDto.createCommentDto(created);
     }
 }
