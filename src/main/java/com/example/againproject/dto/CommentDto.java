@@ -1,6 +1,7 @@
 package com.example.againproject.dto;
 
 import com.example.againproject.entity.Comment;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import lombok.ToString;
 @ToString // 모든 필드 출력
 public class CommentDto {
     private Long id; // 댓글의 id
+    @JsonProperty("article_id")
     private Long articleId; // 댓글의 부모 id
     private String nickname; // 댓글 작성자
     private String body; // 댓글 본문
