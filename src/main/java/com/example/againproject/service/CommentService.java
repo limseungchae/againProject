@@ -70,6 +70,7 @@ public class CommentService {
                 .orElseThrow(() -> new IllegalArgumentException("댓글 삭제 실패!" +
                         "대상이 없습니다.")); // 없으면 에러 메시지 출력
         // 2. 댓글 삭제
+        commentRepository.delete(target);
         // 3. 삭제 댓글을 DTo로 변환 및 반환
     }
 }
