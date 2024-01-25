@@ -64,7 +64,7 @@ public class CommentService {
         return CommentDto.createCommentDto(updated);
     }
 
-    public void delete(Long id) {
+    public CommentDto delete(Long id) {
         // 1. 댓글 조회 및 예외 발생
         Comment target = commentRepository.findById(id) // 삭제할 댓글 가져오기
                 .orElseThrow(() -> new IllegalArgumentException("댓글 삭제 실패!" +
@@ -72,5 +72,6 @@ public class CommentService {
         // 2. 댓글 삭제
         commentRepository.delete(target);
         // 3. 삭제 댓글을 DTo로 변환 및 반환
+        return CommentDto.createCommentDto(target);
     }
 }
