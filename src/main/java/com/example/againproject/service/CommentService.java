@@ -63,4 +63,10 @@ public class CommentService {
         // 4. 댓글 엔티티를 DTO로 변환 및 반환
         return CommentDto.createCommentDto(updated);
     }
+
+    public void delete(Long id) {
+        // 1. 댓글 조회 및 예외 발생
+        // 2. 댓글 삭제
+        // 3. 삭제 댓글을 DTo로 변환 및 반환
+    }
 }
