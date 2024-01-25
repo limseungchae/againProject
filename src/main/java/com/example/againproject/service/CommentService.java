@@ -59,6 +59,7 @@ public class CommentService {
         // 2. 댓글 수정
         target.patch(dto);
         // 3. DB로 갱신
+        Comment updated = commentRepository.save(target);
         // 4. 댓글 엔티티를 DTO로 변환 및 반환
         return dto;
     }
