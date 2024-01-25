@@ -64,6 +64,7 @@ public class CommentService {
         return CommentDto.createCommentDto(updated);
     }
 
+    @Transactional
     public CommentDto delete(Long id) {
         // 1. 댓글 조회 및 예외 발생
         Comment target = commentRepository.findById(id) // 삭제할 댓글 가져오기
