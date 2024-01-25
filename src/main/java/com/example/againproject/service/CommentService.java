@@ -66,6 +66,9 @@ public class CommentService {
 
     public void delete(Long id) {
         // 1. 댓글 조회 및 예외 발생
+        Comment target = commentRepository.findById(id) // 삭제할 댓글 가져오기
+                .orElseThrow(() -> new IllegalArgumentException("댓글 삭제 실패!" +
+                        "대상이 없습니다.")); // 없으면 에러 메시지 출력
         // 2. 댓글 삭제
         // 3. 삭제 댓글을 DTo로 변환 및 반환
     }
