@@ -43,4 +43,9 @@ public class Comment {
                 dto.getBody()       // 댓글 본문
         );
     }
+
+    public void patch(CommentDto dto) {
+        // 예외 발생
+        // 객체 갱신
+    }
 }
