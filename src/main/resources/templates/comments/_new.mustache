@@ -13,6 +13,10 @@
                 <textarea type="text" class="form-control" rows="3"
                           id="new-comment-body"></textarea>
             </div>
+            <!-- 히든 인풋 -->
+            {{#article}}
+                <input type="hidden" id="new-comment-article-id" value="{{id}}">
+            {{/article}}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
