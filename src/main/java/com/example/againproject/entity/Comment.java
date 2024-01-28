@@ -33,7 +33,7 @@ public class Comment {
         // 예외 발생
         if (dto.getId() != null)
             throw new IllegalArgumentException("댓글 생성 실패! 댓글의 id가 없어야 합니다.");
-        if (dto.getArticleId() != article.getId())
+        if (dto.getArticleId() != null)
             throw new IllegalArgumentException("댓글 생성 실패! 댓글의 id가 잘못됐습니다.");
         // 엔티티 생성 반환
         return new Comment(
