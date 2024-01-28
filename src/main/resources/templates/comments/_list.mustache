@@ -9,7 +9,12 @@
                 <button type="button"
                         class="btn btn-sm btn-outline-primary"
                         data-bs-toggle="modal"
-                        data-bs-target="#comment-edit-modal">수정</button> <!-- id 변경 -->
+                        data-bs-target="#comment-edit-modal"
+                        data-bs-id="{{id}}"
+                        data-bs-nickname="{{nickname}}"
+                        data-bs-body="{{body}}"
+                        data-bs-article-id="{{articleId}}">
+                        수정</button> <!-- id 변경 -->
             </div>
             <!-- 댓글 본문 영역 설정 -->
             <div class="card-body">
