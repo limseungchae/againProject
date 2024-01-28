@@ -71,6 +71,10 @@
             // 1. 트리거 버튼 선택
             const triggerBtn = event.relatedTarget;
             // 2. 데이터 가져오기
+            const id = triggerBtn.getAttribute("data-bs-id");
+            const nickname = triggerBtn.getAttribute("data-bs-nickname");
+            const body = triggerBtn.getAttribute("data-bs-body");
+            const articleId = triggerBtn.getAttribute("data-bs-article-id");
             // 3. 수정 폼에 데이터 반영
         });
     }
