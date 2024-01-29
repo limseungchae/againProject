@@ -21,7 +21,7 @@
                 <!-- 댓글 삭제 버튼 -->
                 <button type="button"
                         class="btn btn-sm btn-outline-danger comment-delete-btn"
-                        data-bs-id="{{id}}">삭제</button>
+                        data-comment-id="{{id}}">삭제</button>
             </div>
             <!-- 댓글 본문 영역 설정 -->
             <div class="card-body">
@@ -91,7 +91,7 @@
     }
     {
         // 수정 완료 버튼 선택
-        document.querySelector("#comment-update-btn");
+        const commentUpdateBtn = document.querySelector("#comment-update-btn");
         // 클릭 이벤트 처리
         commentUpdateBtn.addEventListener("click",function () {
             // 수정 댓글 객체 생성
@@ -99,7 +99,7 @@
                 id: document.querySelector("#edit-comment-id").value,
                 nickname: document.querySelector("#edit-comment-nickname").value,
                 body: document.querySelector("#edit-comment-body").value,
-                articleId: document.querySelector("#edit-comment-article-id").value,
+                articleId: document.querySelector("#edit-comment-article-id").value
             };
             console.log(comment); // 객체 생성 확인
             // 수정 REST API 호출
@@ -116,7 +116,7 @@
                 alert(msg);
                 // 현재 페이지 새로고침
                 window.location.reload(); // 새로고침
-            })
+            });
         });
     }
 </script>
@@ -127,7 +127,8 @@
         const commentDeleteBtn = document.querySelectorAll(".comment-delete-btn");
         // 삭제 버튼 이벤트 처리
         // commentDeleteBtn.addEventListener("click", function () {
-        //     console.log("삭제 버튼이 클릭됐습니다..!")
+        //     console.log("삭제 버튼이 클릭됐습니다..!");
+        // });
         commentDeleteBtn.forEach(btn => {               // [삭제] 버튼 수만큼 반복
             btn.addEventListener("click", (event) => {  // 각 버튼 이벤트 처리, event 객체 받아오기
                 // 이벤트 발생 요소 선택
@@ -146,14 +147,14 @@
                         return;
                     }
                     // 삭제 성공시 댓글을 화면에서 지우고 메시지 창 띄우기
-                    const target = document.querySelector(`#comment-${commentId}`);
+                    const target = document.querySelector(`#comments-${commentId}`);
                     target.remove();
                     const msg = `${commentId}번 댓글을 삭제했습니다.`;
                     alert(msg);
                     // 현재 페이지 새로 고침
                     window.location.reload();
                 });
-            })
-        })
+            });
+        });
     }
 </script>
